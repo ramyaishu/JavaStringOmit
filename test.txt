@@ -1,0 +1,24 @@
+import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StringOmit2
+{
+    public List<Integer> omitTwo(List<Integer> nums) {
+        nums.replaceAll(n -> n * 2);
+        nums.removeIf(n -> n % 10 == 2);
+        System.out.println(nums);
+        return nums;
+    }
+
+    @Test
+    public void testCAse1()
+    {
+        List<Integer> arr = new ArrayList<>();
+        arr.add(1);
+        arr.add(33);
+        arr.add(100);
+        omitTwo(arr);
+    }
+}
